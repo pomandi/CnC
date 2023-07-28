@@ -1,0 +1,20 @@
+<!-- cncweb/templates/cncweb/collection_detail.html -->
+{% extends 'cncweb/base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
+
+{% block content %}
+    <h2>{{ collection.title }}</h2>
+    <img class="collection-image" src="{{ collection.image.url }}" alt="{{ collection.title }}">
+    <ul>
+        {% for product in collection.products.all %}
+            <li>
+                <!-- Ürün detaylarına link eklenmiştir -->
+                <h3><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h3>
+                <!-- Product detaylarını sergilemek için kod... -->
+            </li>
+        {% empty %}
+            <li>Bu koleksiyonda hiç ürün yok.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

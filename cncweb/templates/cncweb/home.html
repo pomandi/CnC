@@ -1,0 +1,68 @@
+{% extends 'cncweb/base.html' %}
+
+{% load static %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
+
+<h1>Takim Elbise Dunyasi</h1>
+
+<!-- Carousel (Slayt Gösterisi) -->
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Slayt İçerikleri -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="{% url 'hakkimizda' %}">
+                <img class="d-block w-100" src="{% static 'myproject/images/slide1.jpg' %}" alt="Slide 1">
+
+                <div class="carousel-caption">
+                    <h3>Koleksiyon 1</h3>
+                    <p>Ürün Açıklaması 1</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% url 'iletisim' %}">
+                <img class="d-block w-100" src="{% static 'myproject/images/slide2.jpg' %}" alt="Slide 2">
+
+                <div class="carousel-caption">
+                    <h3>Koleksiyon 2</h3>
+                    <p>Ürün Açıklaması 2</p>
+                </div>
+            </a>
+        </div>
+        <!-- Diğer slayt içerikleri buraya eklenebilir -->
+    </div>
+
+    <!-- Slayt İleri/Geri Kontrolleri -->
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!-- Info Section -->
+
+<div class="info-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="info-title">hemen,sqdqs</h2>
+                <p class="info-text">
+                    Anladım, bu durum genellikle / veya /home/ şeklindeki iki ayrı yola sahip olmaktan kaynaklanır.
+                    
+                    Eğer / yolu ana sayfanızı temsil ediyorsa ve /home/ yolu da aynı sayfaya yönlendiriliyorsa, hem / hem de /home/ dizinlerinin Home adlı bir breadcrumb oluşturmasını bekleyebilirsiniz.
+                    
+                    Bu durumu çözmek için, belirli bir yolu göz ardı edebilir veya genel bir durumu kontrol edebilirsiniz. Örneğin, URL yolu / veya /home/ olduğunda yalnızca bir Home breadcrumb oluşturabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
