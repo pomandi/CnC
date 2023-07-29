@@ -6,15 +6,22 @@
 {% block content %}
     <h2>{{ collection.title }}</h2>
     <img class="collection-image" src="{{ collection.image.url }}" alt="{{ collection.title }}">
-    <ul>
+    <div class="row">
         {% for product in collection.products.all %}
-            <li>
-                <!-- Ürün detaylarına link eklenmiştir -->
-                <h3><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h3>
-                <!-- Product detaylarını sergilemek için kod... -->
-            </li>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <!-- Product image is optional, so we check if it exists first -->
+                    {% if product.images.first %}
+                    <img src="{{ product.images.first.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h5>
+                        <p class="card-text">{{ product.price }}</p>
+                    </div>
+                </div>
+            </div>
         {% empty %}
-            <li>Bu koleksiyonda hiç ürün yok.</li>
+            <p>Bu koleksiyonda hiç ürün yok.</p>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

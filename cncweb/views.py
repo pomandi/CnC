@@ -14,6 +14,7 @@ def product_detail(request, product_id):
 
 # views.py
 def home(request):
+    
     products = Product.objects.all()[:8]  # Get the first 8 products
     for product in products:
         product.main_image = product.images.first()  # We assume the first image as the main image.
@@ -21,16 +22,17 @@ def home(request):
 
 
 def hakkimizda(request):
+    
     products = Product.objects.all()[:8]  # Get the first 8 products
     for product in products:
         product.main_image = product.images.first()  # We assume the first image as the main image.
-    return render(request, 'cncweb/home.html', {'products': products})
+    return render(request, 'cncweb/hakkimizda.html', {'products': products})
 
 def iletisim(request):
     products = Product.objects.all()[:8]  # Get the first 8 products
     for product in products:
         product.main_image = product.images.first()  # We assume the first image as the main image.
-    return render(request, 'cncweb/home.html', {'products': products})
+    return render(request, 'cncweb/iletisim.html', {'products': products})
 
 def collection_list(request):
     collections = Collection.objects.all()
@@ -45,3 +47,11 @@ class CollectionDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['products'] = self.object.products.all()  # collection ile ilişkili tüm ürünleri alır
         return context
+
+from django.shortcuts import render
+from .models import Product
+
+def product_list(request):
+    products = Product.objects.all().distinct()
+    return render(request, 'cncweb/product_list.html', {'products': products})
+

@@ -1,6 +1,13 @@
 {% extends 'cncweb/base.html' %}
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
 {% block content %}
-<h1>İletişim</h1>
-<p>Buraya iletişim bilgilerinizi ekleyin...</p>
+<h1>Contact</h1>
+<p class="contact-p">Buraya iletişim bilgilerinizi ekleyin...</p>
+{% block carousel %}
+{% endblock carousel %}
+
+
+
+   
 {% endblock %}
