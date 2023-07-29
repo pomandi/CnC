@@ -1,9 +1,13 @@
-
 {% extends 'cncweb/base.html' %}
-
-{% block title %}Hakkımızda{% endblock %}
-
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
 {% block content %}
-    <h1>Hakkımızda</h1>
-    <p>Şirketimiz hakkında bilgi...</p>
+<h1>Merhaba Dünya!</h1>
+    <p class="about-p">İçerik burada yer alacaktır.</p>
+{% block carousel %}
+{% endblock carousel %}
+
+
+
+    
 {% endblock %}

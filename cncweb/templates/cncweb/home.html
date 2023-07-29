@@ -2,21 +2,17 @@
 
 {% load static %}
 
-{% block title %}Ana Sayfa{% endblock %}
+{% block title %}Home Page{% endblock %}
 
-{% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
-
-<h1>Takim Elbise Dunyasi</h1>
-
+{% block carousel %}
 <!-- Carousel (Slayt Gösterisi) -->
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Slayt İçerikleri -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="{% url 'hakkimizda' %}">
-                <img class="d-block w-100" src="{% static 'myproject/images/slide1.jpg' %}" alt="Slide 1">
+            <a href="{% url 'about' %}">
+                <img class="carousel-img" class="d-block w-100" src="{% static 'myproject/images/slide1.jpg' %}" alt="Slide 1">
+
 
                 <div class="carousel-caption">
                     <h3>Koleksiyon 1</h3>
@@ -25,8 +21,8 @@
             </a>
         </div>
         <div class="carousel-item">
-            <a href="{% url 'iletisim' %}">
-                <img class="d-block w-100" src="{% static 'myproject/images/slide2.jpg' %}" alt="Slide 2">
+            <a href="{% url 'contact' %}">
+                <img class="carousel-img" class="d-block w-100" src="{% static 'myproject/images/slide2.jpg' %}" alt="Slide 2">
 
                 <div class="carousel-caption">
                     <h3>Koleksiyon 2</h3>
@@ -47,19 +43,37 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+{% endblock carousel %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'myproject/style.css' %}">
+
+<h1>WORLD OF MEN SUIT'S</h1>
+
 <!-- Info Section -->
 
 <div class="info-section">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="info-title">hemen,sqdqs</h2>
+                <h2 class="info-title">We Craft Magnificent Suits Just For You</h2>
                 <p class="info-text">
-                    Anladım, bu durum genellikle / veya /home/ şeklindeki iki ayrı yola sahip olmaktan kaynaklanır.
                     
-                    Eğer / yolu ana sayfanızı temsil ediyorsa ve /home/ yolu da aynı sayfaya yönlendiriliyorsa, hem / hem de /home/ dizinlerinin Home adlı bir breadcrumb oluşturmasını bekleyebilirsiniz.
-                    
-                    Bu durumu çözmek için, belirli bir yolu göz ardı edebilir veya genel bir durumu kontrol edebilirsiniz. Örneğin, URL yolu / veya /home/ olduğunda yalnızca bir Home breadcrumb oluşturabilirsiniz.</p>
+                    <h2>We offer you a <strong>fantastic opportunity</strong> to stock your shelves with <strong>superbly tailored suits</strong> at an unbeatable price.</h2>
+<p>This is a <strong>sensible business proposition</strong> that allows you to provide your clientele with <strong>high-quality fashion</strong> at affordable rates, thereby increasing customer satisfaction and loyalty. Don't miss out on this opportunity to <strong>boost your product range and profit margin</strong>.</p>
+<img class="info-img" src="{% static 'myproject/images/shop.jpeg' %}" alt="An image description">
+<hr>
+
+<h2>Discover our <strong>exclusive collection</strong>, meticulously crafted from superior quality viscose, polyester, and wool fabrics.</h2>
+<p>Place your order now and take advantage of our <strong>swift delivery service of 10-15 days</strong>.</p> <img class="info-img" src="{% static 'myproject/images/factory.jpg' %}" alt="An image description">
+
+<hr>
+
+<p>These fabrics, chosen for their elasticity and overall excellence, are ideally suited for the creation of suits. As a <strong>wholesale suit company</strong>, we offer top-of-the-line products made from the most suitable fabrics for an exquisite and comfortable fit.</p>
+<img class="info-img" src="{% static 'myproject/images/rose-men-suit.jpg' %}" alt="An image description">
+<hr>
+
+<h2>Join the ranks of our satisfied customers and elevate your style today with our <strong>premium suit range</strong>.</h2> <img class="info-img" src="{% static 'myproject/images/giris.jpeg' %}" alt="An image description">
             </div>
         </div>
     </div>
